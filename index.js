@@ -6,10 +6,11 @@ const session = require('express-session')
 const cookieParser = require('cookie-parser')
 const cors = require('cors')
 const mongoose = require('mongoose')
-const passport = require('passport')
 const Sentry = require('@sentry/node')
-const swaggerUi = require('swagger-ui-express');
-const swaggerDocument = require('./swagger.json');
+
+const swaggerJsdoc = require("swagger-jsdoc")
+const swaggerUi = require("swagger-ui-express")
+const options = require("./utils/swagger")
 
 const { logger } = require('./middlewares/logger')
 
@@ -27,10 +28,10 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 app.use(cookieParser())
 app.use(session({ secret: process.env.SESSION_SECRET, resave: true, saveUninitialized: true }))
-app.use(passport.initialize())
-app.use(passport.session())
 
-app.use('/', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+const specs = swaggerJsdoc(options);
+app.use("/", swaggerUi.serve);
+app.get("/", swaggerUi.setup(specs, { explorer: true }));
 
 app.get('/debug-sentry', (req, res) => {
   throw new Error('My first Sentry error!');
