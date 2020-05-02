@@ -8,6 +8,8 @@ const cors = require('cors')
 const mongoose = require('mongoose')
 const passport = require('passport')
 const Sentry = require('@sentry/node')
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('./swagger.json');
 
 const { logger } = require('./middlewares/logger')
 
@@ -24,17 +26,11 @@ app.use(logger)
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 app.use(cookieParser())
-app.use(session({
-  secret: process.env.SESSION_SECRET,
-  resave: true,
-  saveUninitialized: true
-}))
+app.use(session({ secret: process.env.SESSION_SECRET, resave: true, saveUninitialized: true }))
 app.use(passport.initialize())
 app.use(passport.session())
 
-app.get('/', (req, res) => {
-  res.send("Welcome to Pholog API")
-})
+app.use('/', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 app.get('/debug-sentry', (req, res) => {
   throw new Error('My first Sentry error!');

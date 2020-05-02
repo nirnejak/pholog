@@ -44,7 +44,10 @@
     "moment": "^2.25.1",
     "mongoose": "^5.9.11",
     "nodemailer": "^6.4.6",
-    "passport": "^0.4.1"
+    "passport": "^0.4.1",
+    "socker.io": "0.0.0-alpha-beta",
+    "swagger-jsdoc": "^4.0.0",
+    "swagger-ui-express": "^4.1.4"
   },
   "devDependencies": {
     "eslint": "^6.8.0",
