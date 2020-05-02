@@ -10,15 +10,22 @@ const mongoose = require("mongoose");
  *          - name
  *          - email
  *        properties:
- *          name:
- *            type: string
  *          email:
  *            type: string
  *            format: email
  *            description: Email for the user, needs to be unique.
+ *          contact:
+ *            type: string
+ *            format: email
+ *            description: Contact Number for the user, needs to be unique.
+ *          name:
+ *            type: string
+ *          avatarUrl:
+ *            type: string
+ *            description: URL for the user profile Picture
  *        example:
- *           name: Alexander
- *           email: fake@email.com
+ *           name: Jitendra Nirnejak
+ *           email: hello@nirnejak.com
  */
 
 const userSchema = mongoose.Schema({

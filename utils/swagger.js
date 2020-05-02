@@ -23,5 +23,8 @@ module.exports = {
       }
     ]
   },
-  apis: ["./models/user.js"]
+  apis: [
+    "./models/user.js",
+    "./routes/api/users.js"
+  ]
 };

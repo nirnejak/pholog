@@ -6,6 +6,13 @@ const User = require("../../models/user")
 
 const router = express.Router()
 
+/**
+ * @swagger
+ * tags:
+ *   name: Users
+ *   description: User management
+ */
+
 router.get("/", isAuthenticated, (req, res) => {
   User.findAll()
     .then(users => res.json({ users }))
@@ -18,6 +25,27 @@ router.get("/:email", isAuthenticated, (req, res) => {
     .catch(error => res.status(500).json({ message: error.message }))
 })
 
+/**
+ * @swagger
+ * path:
+ *  /users/:
+ *    post:
+ *      summary: Create a new user
+ *      tags: [Users]
+ *      requestBody:
+ *        required: true
+ *        content:
+ *          application/json:
+ *            schema:
+ *              $ref: '#/components/schemas/User'
+ *      responses:
+ *        "200":
+ *          description: A user schema
+ *          content:
+ *            application/json:
+ *              schema:
+ *                $ref: '#/components/schemas/User'
+ */
 router.put("/:email", isAuthenticated, (req, res) => {
   User.findOne({ email: req.user.email })
     .then(user => {
