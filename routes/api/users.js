@@ -13,12 +13,42 @@ const router = express.Router()
  *   description: User management
  */
 
+/**
+ * @swagger
+ * path:
+ *  /users/:
+ *    get:
+ *      summary: List users
+ *      tags: [Users]
+ *      responses:
+ *        "200":
+ *          description: A list of user
+ *          content:
+ *            application/json:
+ *              schema:
+ *                $ref: '#/components/schemas/User'
+ */
 router.get("/", isAuthenticated, (req, res) => {
   User.findAll()
     .then(users => res.json({ users }))
     .catch(error => res.status(500).json({ message: error.message }))
 })
 
+/**
+ * @swagger
+ * path:
+ *  /users/:email:
+ *    get:
+ *      summary: Get a user
+ *      tags: [Users]
+ *      responses:
+ *        "200":
+ *          description: A user schema
+ *          content:
+ *            application/json:
+ *              schema:
+ *                $ref: '#/components/schemas/User'
+ */
 router.get("/:email", isAuthenticated, (req, res) => {
   User.findOne({ email: req.params.email })
     .then(user => user ? res.status(404).json({ message: `No user found with email: ${res.params.email}` }) : res.json({ user }))
