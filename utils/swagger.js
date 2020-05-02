@@ -23,5 +23,5 @@ module.exports = {
       }
     ]
   },
-  apis: []
+  apis: ["./models/user.js"]
 };
