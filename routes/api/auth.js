@@ -18,7 +18,7 @@ const router = express.Router();
  * @swagger
  * path:
  *  /auth/register:
- *    put:
+ *    post:
  *      summary: Register a new user
  *      tags: [Auth]
  *      requestBody:
@@ -38,19 +38,21 @@ const router = express.Router();
 router.post("/register", (req, res) => {
   const new_user = new User({
     name: req.body.name,
-    password: req.body.name,
     email: req.body.email,
+    contact: req.body.contact,
+    password: req.body.password,
     avatarUrl: req.body.avatarUrl,
   })
-  new_user.save(user => res.json({ message: "User registered successfully" }))
+  new_user.save()
+    .then(user => res.json({ message: "User registered successfully" }))
     .catch(error => res.status(500).json({ error: error.message }))
 });
 
 /**
  * @swagger
  * path:
- *  /users/login:
- *    put:
+ *  /auth/login:
+ *    post:
  *      summary: Login a user
  *      tags: [Auth]
  *      requestBody:

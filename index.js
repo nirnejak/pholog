@@ -39,7 +39,7 @@ app.get('/debug-sentry', (req, res) => {
 
 // Using Routes for API
 app.use('/api/users', require('./routes/api/users'))
-app.use('/auth', require('./routes/api/auth'))
+app.use('/api/auth', require('./routes/api/auth'))
 app.use('/admin', require('./admin/'))
 
 app.get('*', function (req, res) {

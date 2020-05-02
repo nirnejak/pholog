@@ -10,6 +10,7 @@ const mongoose = require("mongoose");
  *          - name
  *          - email
  *          - contact
+ *          - password
  *        properties:
  *          email:
  *            type: string
@@ -24,6 +25,12 @@ const mongoose = require("mongoose");
  *          avatarUrl:
  *            type: string
  *            description: URL for the user profile Picture
+ *          password:
+ *            type: string
+ *          status:
+ *            type: boolean
+ *          isAdmin:
+ *            type: boolean
  *        example:
  *           name: Jitendra Nirnejak
  *           email: hello@nirnejak.com
@@ -37,8 +44,7 @@ const userSchema = mongoose.Schema({
   name: { type: String, required: true },
   avatarUrl: { type: String },
 
-  password: { type: String },
-  token: { type: String, required: true },
+  password: { type: String, required: true },
 
   status: { type: String, default: "active" },
   isAdmin: { type: Boolean, default: false },
