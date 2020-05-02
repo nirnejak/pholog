@@ -78,8 +78,13 @@ router.post("/login", (req, res) => {
       if (user) {
         if (user.password === password) {
           jwt.sign({ user }, process.env.JWT_TOKEN_SECRET, { expiresIn: "1 day" }, (err, token) => {
-            user["jwtToken"] = token
-            res.json({ ...user, token })
+            res.json({
+              email: user.email,
+              contact: user.contact,
+              name: user.name,
+              avatarUrl: user.avatarUrl,
+              token
+            })
           })
         } else {
           res.status(401).json({ message: "Incorrect Password" })

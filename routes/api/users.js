@@ -22,7 +22,7 @@ const router = express.Router()
  *      tags: [Users]
  *      responses:
  *        "200":
- *          description: A list of user
+ *          description: List of users
  *          content:
  *            application/json:
  *              schema:
