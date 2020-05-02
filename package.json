@@ -24,14 +24,23 @@
   },
   "homepage": "https://github.com/nirnejak/pholog#readme",
   "dependencies": {
+    "@sentry/node": "^5.15.5",
+    "admin-bro": "^2.2.12",
+    "admin-bro-expressjs": "^2.0.5",
+    "admin-bro-mongoose": "^0.5.1",
     "axios": "^0.19.2",
     "bull": "^3.13.0",
     "chalk": "^4.0.0",
+    "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "express-session": "^1.17.1",
     "jsonwebtoken": "^8.5.1",
     "moment": "^2.25.1",
-    "nodemailer": "^6.4.6"
+    "mongoose": "^5.9.11",
+    "nodemailer": "^6.4.6",
+    "passport": "^0.4.1"
   },
   "devDependencies": {
     "eslint": "^6.8.0",

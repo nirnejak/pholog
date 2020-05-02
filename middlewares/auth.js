@@ -2,8 +2,6 @@ const express = require('express')
 const jwt = require('jsonwebtoken')
 const chalk = require('chalk')
 
-const config = require('../config')
-
 module.exports = isAuthenticated = (req, res, next) => {
   const bearerHeader = req.headers['authorization'];
 
@@ -12,7 +10,7 @@ module.exports = isAuthenticated = (req, res, next) => {
     const bearerToken = bearer[1]
     req["jwtToken"] = bearerToken
 
-    jwt.verify(bearerToken, config.JWT_TOKEN_SECRET, (err, authData) => {
+    jwt.verify(bearerToken, process.env.JWT_TOKEN_SECRET, (err, authData) => {
       if (err) {
         console.log(chalk.red.inverse(err))
         res.sendStatus(403) // Forbidden
