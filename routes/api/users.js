@@ -1,6 +1,7 @@
 const express = require('express')
 
-const { isAuthenticated } = require("../../middlewares/auth")
+const isAuthenticated = require("../../middlewares/auth")
+
 const User = require('../../models/user')
 
 const router = express.Router()
@@ -16,3 +17,5 @@ router.get('/:email', isAuthenticated, (req, res) => {
     .then(user => user ? res.status(404).json({ message: `No user found with email: ${res.params.email}` }) : res.json({ user }))
     .catch(error => res.status(500).json({ message: error.message }))
 })
+
+module.exports = router

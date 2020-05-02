@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
-    "test": "node test/index.js"
+    "test": "node test/index.js",
+    "lint": "eslint ./ --cache --ignore-pattern .gitignore"
   },
   "repository": {
     "type": "git",
@@ -29,12 +30,14 @@
     "admin-bro-expressjs": "^2.0.5",
     "admin-bro-mongoose": "^0.5.1",
     "axios": "^0.19.2",
+    "bcryptjs": "^2.4.3",
     "bull": "^3.13.0",
     "chalk": "^4.0.0",
     "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "express-formidable": "^1.2.0",
     "express-session": "^1.17.1",
     "ioredis": "^4.16.3",
     "jsonwebtoken": "^8.5.1",
