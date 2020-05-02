@@ -1,9 +1,9 @@
-const express = require('express')
-const jwt = require('jsonwebtoken')
-const chalk = require('chalk')
+const express = require("express")
+const jwt = require("jsonwebtoken")
+const chalk = require("chalk")
 
 module.exports = isAuthenticated = (req, res, next) => {
-  const bearerHeader = req.headers['authorization'];
+  const bearerHeader = req.headers["authorization"];
 
   if (typeof bearerHeader !== "undefined") {
     const bearer = bearerHeader.split(" ")

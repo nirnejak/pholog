@@ -1,12 +1,12 @@
-const express = require('express')
-const chalk = require('chalk')
-const jwt = require('jsonwebtoken')
+const express = require("express")
+const chalk = require("chalk")
+const jwt = require("jsonwebtoken")
 
-const User = require('../../models/user')
+const User = require("../../models/user")
 
 const router = express.Router();
 
-router.post('/register', (req, res) => {
+router.post("/register", (req, res) => {
   const new_user = new User({
     name: req.body.name,
     password: req.body.name,
@@ -17,7 +17,7 @@ router.post('/register', (req, res) => {
     .catch(error => res.status(500).json({ error: error.message }))
 });
 
-router.post('/login', (req, res) => {
+router.post("/login", (req, res) => {
   const email = req.body.email;
   const password = req.body.password;
 
@@ -25,7 +25,7 @@ router.post('/login', (req, res) => {
     .then(user => {
       if (user) {
         if (user.password === password) {
-          jwt.sign({ user }, process.env.JWT_TOKEN_SECRET, { expiresIn: '1 day' }, (err, token) => {
+          jwt.sign({ user }, process.env.JWT_TOKEN_SECRET, { expiresIn: "1 day" }, (err, token) => {
             user["jwtToken"] = token
             res.json({ ...user, token })
           })
