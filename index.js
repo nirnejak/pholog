@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 const express = require('express')
 const chalk = require('chalk')
 const session = require('express-session')
@@ -31,7 +33,7 @@ app.use(passport.initialize())
 app.use(passport.session())
 
 app.get('/', (req, res) => {
-  res.send("Welcome to GitPro API")
+  res.send("Welcome to Pholog API")
 })
 
 app.get('/debug-sentry', (req, res) => {
