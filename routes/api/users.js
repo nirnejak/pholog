@@ -28,9 +28,9 @@ router.get("/:email", isAuthenticated, (req, res) => {
 /**
  * @swagger
  * path:
- *  /users/:
- *    post:
- *      summary: Create a new user
+ *  /users/:email:
+ *    put:
+ *      summary: Update a user
  *      tags: [Users]
  *      requestBody:
  *        required: true
@@ -63,6 +63,21 @@ router.put("/:email", isAuthenticated, (req, res) => {
     .catch(error => res.status(500).json({ message: error.message }))
 })
 
+/**
+ * @swagger
+ * path:
+ *  /users/:email:
+ *    delete:
+ *      summary: Delete a user
+ *      tags: [Users]
+ *      responses:
+ *        "200":
+ *          description: A user schema
+ *          content:
+ *            application/json:
+ *              schema:
+ *                $ref: '#/components/schemas/User'
+ */
 router.delete("/:email", isAuthenticated, (req, res) => {
   User.findOne({ email: req.user.email })
     .then(user => {

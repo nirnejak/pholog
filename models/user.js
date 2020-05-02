@@ -9,6 +9,7 @@ const mongoose = require("mongoose");
  *        required:
  *          - name
  *          - email
+ *          - contact
  *        properties:
  *          email:
  *            type: string
@@ -26,13 +27,15 @@ const mongoose = require("mongoose");
  *        example:
  *           name: Jitendra Nirnejak
  *           email: hello@nirnejak.com
+ *           contact: 7869290297
+ *           avatarUrl: https://example.com/image.png
  */
 
 const userSchema = mongoose.Schema({
-  email: { type: String },
-  contact: { type: String },
-  name: { type: String },
-  avatarUrl: { type: String, required: true },
+  email: { type: String, required: true },
+  contact: { type: String, required: true },
+  name: { type: String, required: true },
+  avatarUrl: { type: String },
 
   password: { type: String },
   token: { type: String, required: true },

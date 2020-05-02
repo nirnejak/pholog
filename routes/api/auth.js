@@ -6,6 +6,35 @@ const User = require("../../models/user")
 
 const router = express.Router();
 
+/**
+ * @swagger
+ * tags:
+ *   name: Auth
+ *   description: Authentication Routes
+ */
+
+
+/**
+ * @swagger
+ * path:
+ *  /auth/register:
+ *    put:
+ *      summary: Register a new user
+ *      tags: [Auth]
+ *      requestBody:
+ *        required: true
+ *        content:
+ *          application/json:
+ *            schema:
+ *              $ref: '#/components/schemas/User'
+ *      responses:
+ *        "200":
+ *          description: A user schema
+ *          content:
+ *            application/json:
+ *              schema:
+ *                $ref: '#/components/schemas/User'
+ */
 router.post("/register", (req, res) => {
   const new_user = new User({
     name: req.body.name,
@@ -17,6 +46,27 @@ router.post("/register", (req, res) => {
     .catch(error => res.status(500).json({ error: error.message }))
 });
 
+/**
+ * @swagger
+ * path:
+ *  /users/login:
+ *    put:
+ *      summary: Login a user
+ *      tags: [Auth]
+ *      requestBody:
+ *        required: true
+ *        content:
+ *          application/json:
+ *            schema:
+ *              $ref: '#/components/schemas/User'
+ *      responses:
+ *        "200":
+ *          description: A user schema
+ *          content:
+ *            application/json:
+ *              schema:
+ *                $ref: '#/components/schemas/User'
+ */
 router.post("/login", (req, res) => {
   const email = req.body.email;
   const password = req.body.password;
