@@ -18,7 +18,6 @@ const mongoose = require("mongoose");
  *            description: Email for the user, needs to be unique.
  *          contact:
  *            type: string
- *            format: email
  *            description: Contact Number for the user, needs to be unique.
  *          name:
  *            type: string

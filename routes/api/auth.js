@@ -79,6 +79,7 @@ router.post("/login", (req, res) => {
         if (user.password === password) {
           jwt.sign({ user }, process.env.JWT_TOKEN_SECRET, { expiresIn: "1 day" }, (err, token) => {
             res.json({
+              _id: user._id,
               email: user.email,
               contact: user.contact,
               name: user.name,
