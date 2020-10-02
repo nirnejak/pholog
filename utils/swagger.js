@@ -25,6 +25,7 @@ module.exports = {
   },
   apis: [
     "./models/user.js",
+    "./models/document.js",
     "./routes/api/users.js",
     "./routes/api/auth.js"
   ]
