@@ -43,7 +43,7 @@
     "jsonwebtoken": "^8.5.1",
     "moment": "^2.25.1",
     "mongoose": "^5.9.11",
-    "nodemailer": "^6.4.6",
+    "nodemailer": "^6.4.16",
     "socker.io": "0.0.0-alpha-beta",
     "swagger-jsdoc": "^4.0.0",
     "swagger-ui-express": "^4.1.4"
