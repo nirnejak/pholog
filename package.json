@@ -31,7 +31,7 @@
     "admin-bro-mongoose": "^0.5.2",
     "axios": "^0.21.1",
     "bcryptjs": "^2.4.3",
-    "bull": "^3.22.7",
+    "bull": "^3.22.8",
     "chalk": "^4.1.1",
     "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
