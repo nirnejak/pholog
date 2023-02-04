@@ -50,7 +50,7 @@
     "rimraf": "^3.0.2",
     "socker.io": "0.0.0-alpha-beta",
     "swagger-jsdoc": "^6.1.0",
-    "swagger-ui-express": "^4.1.6"
+    "swagger-ui-express": "^4.6.0"
   },
   "devDependencies": {
     "@types/cookie-parser": "^1.4.2",
