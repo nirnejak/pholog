@@ -43,7 +43,7 @@
     "express-formidable": "^1.2.0",
     "express-session": "^1.17.2",
     "ioredis": "^4.27.9",
-    "jsonwebtoken": "^8.5.1",
+    "jsonwebtoken": "^9.0.0",
     "moment": "^2.29.2",
     "mongoose": "^6.0.4",
     "nodemailer": "^6.6.3",
