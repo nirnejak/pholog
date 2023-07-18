@@ -45,7 +45,7 @@
     "ioredis": "^4.27.9",
     "jsonwebtoken": "^9.0.0",
     "moment": "^2.29.4",
-    "mongoose": "^6.4.6",
+    "mongoose": "^6.11.3",
     "nodemailer": "^6.6.3",
     "rimraf": "^3.0.2",
     "socker.io": "0.0.0-alpha-beta",
