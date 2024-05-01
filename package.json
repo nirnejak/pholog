@@ -32,7 +32,7 @@
     "admin-bro": "^4.0.1",
     "admin-bro-expressjs": "^2.1.1",
     "admin-bro-mongoose": "^0.5.2",
-    "axios": "^0.21.2",
+    "axios": "^0.28.0",
     "bcryptjs": "^2.4.3",
     "bull": "^3.29.1",
     "chalk": "^4.1.2",
