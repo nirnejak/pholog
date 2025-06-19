@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/nirnejak/pholog#readme",
   "dependencies": {
-    "@sentry/node": "^8.35.0",
+    "@sentry/node": "^8.49.0",
     "admin-bro": "^4.0.1",
     "admin-bro-expressjs": "^2.1.1",
     "admin-bro-mongoose": "^0.5.2",
