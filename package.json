@@ -46,7 +46,7 @@
     "jsonwebtoken": "^9.0.0",
     "moment": "^2.29.4",
     "mongoose": "^8.9.5",
-    "nodemailer": "^6.9.9",
+    "nodemailer": "^7.0.7",
     "rimraf": "^3.0.2",
     "socker.io": "0.0.0-alpha-beta",
     "swagger-jsdoc": "^6.1.0",
